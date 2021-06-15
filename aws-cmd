@@ -1,1 +1,1 @@
-nothing-dev
+aws ec2 run-instances --image-id  ami-089539692cca55c6c --instance-type t2.micro --key-name June2021key
