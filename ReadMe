@@ -1,1 +1,4 @@
 We provisioned aws cli... using aws configure command
+I extended Terraform code
+I stored Terraform state file remotely using s3
+I created files backend, data template and output to break down terraform code
