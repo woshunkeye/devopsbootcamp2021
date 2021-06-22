@@ -14,15 +14,15 @@ provider "aws" {
   region  = "eu-west-2"
 }
 
-
 resource "aws_instance" "web_server" {
-  ami           = "ami-089539692cca55c6c"
-  instance_type = "t2.micro"
-  key_name      = "June2021key"
-  user_data = "${data.template_file.ec2_user_data.template}"
+  ami                    = "ami-089539692cca55c6c"
+  instance_type          = var.instance_type
+  key_name               = var.ssh_key 
+  user_data              = data.template_file.ec2_user_data.template
+  vpc_security_group_ids = [aws_security_group.web_server_sg.id]
 
   tags = {
-    Name = "WebServer Extending Terraform1"
+    Name = var.tag_name
   }
 }
 
