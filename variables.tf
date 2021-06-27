@@ -18,3 +18,7 @@ variable "bucket" {
 variable "key" {
     default     = "training/june2021/day3-statefile"
 }
+
+variable "instance_ami" {
+    default     = "ami-089539692cca55c6c"
+}
